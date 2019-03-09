@@ -1,6 +1,8 @@
 package csi311;
 
+// An order object.  Fields of an order and a few methods to validate those fields.
 public class Order {
+		// private attributes and getters/setters
 		private long timeMs; 
 		private String orderId; 
 		private String customerId; 
@@ -27,6 +29,7 @@ public class Order {
 		public void setFlagged(boolean flagged) { this.flagged = flagged; } 
 		
 		
+		// Validate the fields in this order
 	    public boolean validateOrderFields() {
 	    	try { 
 	    		testValidOrderId(getOrderId());
