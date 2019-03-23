@@ -53,9 +53,7 @@ public class MachineSpec implements Serializable {
 	public static boolean isValidTransition(MachineSpec spec, String state1, String state2, boolean isNew) {
 		if (isNew) {
 			// A new order's state is valid if its a start state
-			if (!spec.stateTransitionsContain("start", state1)) {
-				return false; 
-			}
+			return spec.stateTransitionsContain("start", state1);
 		}
 		// Its not a new order, so the state is valid if state1 --> state2 is a valid transition
 		return spec.stateTransitionsContain(state1, state2); 
